@@ -113,6 +113,8 @@ def catcher_catch(arr, turn):   # 점수 산정을 위한 turn
     for i in range(3):
         nr = sr + i * dr[s_dir]
         nc = sc + i * dc[s_dir]
+        if oob(nr, nc):
+            break
         if tree_grid[nr][nc] == 1:
             continue
         if len(arr[nr][nc]) > 0:    # 도망자가 있는 것
